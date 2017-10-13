@@ -7,6 +7,7 @@ EXPOSE 3000
 ENV GRAFANA_VERSION="4.3.1"
 
 ADD root /
+ADD custom.ini /etc/grafana/custom.ini
 RUN yum -y install https://s3-us-west-2.amazonaws.com/grafana-releases/release/grafana-"$GRAFANA_VERSION"-1.x86_64.rpm \
     && yum clean all
 COPY run.sh /usr/share/grafana/
