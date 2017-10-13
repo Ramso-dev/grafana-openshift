@@ -15,7 +15,7 @@ if [ ! -z "${GF_INSTALL_PLUGINS}" ]; then
 fi
 
 /usr/sbin/grafana-server \
---config=${CONF_FILE} \
+--config=/etc/grafana/custom.ini \
 --pidfile=${PID_FILE} \
 cfg:default.paths.logs=${LOG_DIR} \
 cfg:default.paths.data=${DATAD} \
